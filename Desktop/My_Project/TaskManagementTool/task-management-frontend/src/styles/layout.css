@@ -1,0 +1,255 @@
+/* =========================
+   GLOBAL LAYOUT (Trackify SaaS Dashboard)
+========================= */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0b1120;
+  color: #e5e7eb;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 4px 0 20px rgba(0,0,0,0.4);
+}
+
+/* Logo block */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.sidebar-logo::before {
+  content: "🔷";
+  font-size: 22px;
+  color: #3b82f6;
+}
+.sidebar-logo span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* Project title */
+.sidebar h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f9fafb;
+  margin-bottom: 28px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(59,130,246,0.15);
+  border: 1px solid rgba(59,130,246,0.25);
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.sidebar nav button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.sidebar nav button::before {
+  font-size: 16px;
+  display: inline-block;
+}
+
+.sidebar nav button:nth-child(1)::before { content: "📋"; } /* Backlog */
+.sidebar nav button:nth-child(2)::before { content: "🗂️"; } /* Board */
+.sidebar nav button:nth-child(3)::before { content: "🚀"; } /* Sprints */
+.sidebar nav button:nth-child(4)::before { content: "📊"; } /* Reports */
+
+.sidebar nav button:hover {
+  background: rgba(59, 130, 246, 0.15);
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.sidebar nav button.active {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+}
+
+/* =========================
+   STATUS WIDGET
+========================= */
+.sidebar-status {
+  margin-top: 24px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 16px;
+  color: #f9fafb;
+  font-size: 13px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.sidebar-status h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #93c5fd;
+}
+
+.progress-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0; /* default */
+  background: linear-gradient(90deg, #3b82f6, #6366f1);
+  border-radius: 4px;
+  transition: width 0.6s ease; /* <-- smooth animation */
+}
+
+.progress-info {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+.logout-btn {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(239,68,68,0.4);
+}
+
+.logout-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(239,68,68,0.6);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main-content {
+  flex: 1;
+  padding: 32px;
+  background: #0b1120;
+  overflow-y: auto;
+}
+
+.page-header {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #f9fafb;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+    padding: 16px 8px;
+  }
+
+  .sidebar-logo span,
+  .sidebar h2 {
+    display: none;
+  }
+
+  .sidebar nav button {
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
+
+/* Role badge */
+.role-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #2e2e4e;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+}
+
+.role-tag {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.role-admin { color: #f39c12; }
+.role-manager { color: #3498db; }
+.role-developer { color: #2ecc71; }
+.role-tester { color: #9b59b6; }
+
+.role-email {
+  font-size: 11px;
+  color: #718096;
+}
+
+/* Dashboard button */
+.dashboard-btn {
+  background: transparent;
+  color: #a0a0c0;
+  border: 1px solid #3e3e5e;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  text-align: left;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.dashboard-btn:hover {
+  background: #2e2e4e;
+  color: white;
+}

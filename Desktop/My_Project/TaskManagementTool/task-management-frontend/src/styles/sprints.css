@@ -1,0 +1,240 @@
+/* Page header row */
+.page-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Sprint list layout */
+.sprints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Sprint card */
+.sprint-card {
+  background-color: #1e1e2f;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sprint-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+}
+
+.sprint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sprint-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* State badges */
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.badge.planned { background-color: #f1c40f; color: #000; }
+.badge.active { background-color: #3498db; color: #fff; }
+.badge.completed { background-color: #2ecc71; color: #fff; }
+
+/* Sprint details */
+.sprint-goal {
+  font-size: 14px;
+  color: #2ecc71;
+  margin: 8px 0;
+}
+
+.sprint-dates {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.sprint-status {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+/* Progress bar */
+.progress-bar {
+  background-color: #333;
+  border-radius: 6px;
+  height: 10px;
+  margin: 10px 0;
+}
+
+.progress-fill {
+  background-color: #2ecc71;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Actions */
+.sprint-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #2ecc71;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Create Sprint button - SaaS style */
+.btn-create {
+  background: linear-gradient(135deg, #3498db, #2980b9); /* subtle gradient */
+  border: none;
+  padding: 8px 16px;       /* balanced size */
+  border-radius: 8px;      /* smoother corners */
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  width: auto;
+  display: block;
+  margin: 0 auto;          /* centered */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25); /* soft shadow */
+  transition: all 0.25s ease;
+}
+
+.btn-create:hover {
+  background: linear-gradient(135deg, #4aa3df, #3498db); /* lighter hover */
+  transform: translateY(-2px); /* lift effect */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.btn-create:active {
+  transform: translateY(0); /* press down */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+
+
+
+
+/* Form card for Create Sprint */
+.form-card {
+  background-color: #1e1e2f;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-card label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.form-card input,
+.form-card select {
+  background-color: #2a2a3d;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-card input:focus,
+.form-card select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 4px #3498db;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sprint creation form container */
+.create-sprint-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  background: #1e1e2f;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Inputs */
+.create-sprint-form input {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background: #2a2a3d;
+  color: #fff;
+  font-size: 14px;
+}
+
+.create-sprint-form input::placeholder {
+  color: #888;
+}
+
+/* Button */
+.create-sprint-form button {
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.create-sprint-form button:hover {
+  background-color: #2980b9;
+}
+
+/* Error message styling */
+.error-msg {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 8px;
+}
